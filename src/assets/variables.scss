@@ -1,0 +1,24 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+$body-font-family: 'Barlow', 'Roboto', sans-serif;
+
+@import '~vuetify/src/styles/settings/_colors.scss';
+
+$shades: (
+    'black': #0d0d0d,
+    'white': #ffffff,
+    'transparent': transparent,
+);
+
+$card-title-line-height: 1.35;
+$card-title-word-break: normal;
+$card-title-adjacent-sibling-subtitle-margin-top: -14px;
+@import '~vuetify/src/components/VCard/_variables.scss';
+
+
+@import '~vuetify/src/styles/settings/_light.scss';
+@import '~vuetify/src/styles/settings/_dark.scss';
+
+@import '~vuetify/src/styles/styles.sass';

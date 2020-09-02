@@ -1,0 +1,32 @@
+{
+    "name": "erichagemeyer-landing-page",
+    "version": "0.0.1",
+    "description": "Landing Page for Eric Hagemeyer",
+    "author": "Eric Hagemeyer",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate",
+        "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    },
+    "dependencies": {
+        "gm": "^1.23.1",
+        "lodash": "^4.17.15",
+        "nuxt": "2.9.2"
+    },
+    "devDependencies": {
+        "@nuxtjs/eslint-config": "^1.0.1",
+        "@nuxtjs/eslint-module": "^1.0.0",
+        "@nuxtjs/vuetify": "1.11.0",
+        "babel-eslint": "^10.0.1",
+        "eslint": "^6.1.0",
+        "eslint-config-prettier": "^4.1.0",
+        "eslint-plugin-nuxt": ">=0.4.2",
+        "eslint-plugin-prettier": "^3.0.1",
+        "frontmatter-markdown-loader": "^3.1.0",
+        "js-yaml-loader": "^1.2.2",
+        "prettier": "^1.16.4"
+    }
+}
