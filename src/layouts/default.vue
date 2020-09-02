@@ -1,7 +1,10 @@
 <template>
     <v-app>
         <v-app-bar app fixed>
-            Eric Hagemeyer
+            <div class="app-title">
+                <img class="app-title__logo" src="/logo-primary.svg" />
+                <span class="app-title__text ml-6 text-h6 font-weight-bold">Eric Hagemeyer</span>
+            </div>
         </v-app-bar>
         <v-main>
             <nuxt />
@@ -16,4 +19,13 @@
 export default {};
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.app-title {
+    display: flex;
+    align-items: center;
+}
+
+.app-title__logo {
+    height: 48px;
+}
+</style>

@@ -9,50 +9,11 @@
     // color: #66abd9;
 }
 
-.navbar-logo {
-    height: 36px;
-}
 
-.navigation-toolbar {
+.v-app-bar {
     .v-toolbar__content {
         @include make-container;
         @include make-container-max-widths;
-    }
-}
-
-$typestyle-aliases: (
-    'display-4': 'h1',
-    'display-3': 'h2',
-    'display-2': 'h3',
-    'display-1': 'h4',
-    'headline': 'h5',
-    'title': 'h6',
-);
-
-$typestyles: 'subtitle-1', 'subtitle-2', 'body-1', 'body-2', 'caption', 'overline';
-
-@mixin typestyle($heading) {
-    font-size: map-deep-get($headings, $heading, 'size') !important;
-    font-weight: map-deep-get($headings, $heading, 'weight');
-    line-height: map-deep-get($headings, $heading, 'line-height');
-    letter-spacing: map-deep-get($headings, $heading, 'letter-spacing') !important;
-    font-family: map-deep-get($headings, $heading, 'font-family') !important;
-}
-
-@each $breakpoint, $width in $grid-breakpoints {
-    @media only screen and (min-width: #{$width}) {
-        .v-application {
-            @each $class in $typestyles {
-                .#{$class}-#{$breakpoint} {
-                    @include typestyle($class);
-                }
-            }
-            @each $class, $alias in $typestyle-aliases {
-                .#{$class}-#{$breakpoint} {
-                    @include typestyle($alias);
-                }
-            }
-        }
     }
 }
 
