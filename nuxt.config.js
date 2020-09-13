@@ -1,3 +1,4 @@
+import path from 'path';
 import * as links from './build/links';
 import { saveConfigFile, patchUrlLoaderLimit } from './build/config-tools';
 
@@ -5,10 +6,12 @@ import { saveConfigFile, patchUrlLoaderLimit } from './build/config-tools';
 const JOSEFIN_SANS_URL = 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap';
 const ANIMATE_CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
 
-// const APPLE_TOUCH_SIZES = [57, 60, 72, 76, 114, 120, 144, 152, 180];
+const APPLE_TOUCH_SIZES = [57, 60, 72, 76, 114, 120, 144, 152, 180];
 
-// const PNG_ICON_SIZES = [32, 96, 16];
-// const ANDROID_ICON_SIZES = [192];
+const PNG_ICON_SIZES = [32, 96, 16];
+const ANDROID_ICON_SIZES = [192];
+
+const ICON_DIR = 'icons';
 
 export default {
     mode: 'universal',
@@ -37,9 +40,9 @@ export default {
             links.icon('/favicon.ico'),
             links.stylesheet(JOSEFIN_SANS_URL),
             links.stylesheet(ANIMATE_CSS_URL),
-            // ...APPLE_TOUCH_SIZES.map((size) => links.appleTouchIcon(size, '/icon')),
-            // ...PNG_ICON_SIZES.map((size) => links.pngIcon(size, '/icon')),
-            // ...ANDROID_ICON_SIZES.map((size) => links.androidIcon(size, '/icon')),
+            ...APPLE_TOUCH_SIZES.map((size) => links.appleTouchIcon(size, ICON_DIR)),
+            ...PNG_ICON_SIZES.map((size) => links.pngIcon(size, ICON_DIR)),
+            ...ANDROID_ICON_SIZES.map((size) => links.androidIcon(size, ICON_DIR)),
         ],
     },
     globalName: 'erichagemeyer',
@@ -109,6 +112,13 @@ export default {
             config.module.rules.push({
                 test: /\.md$/,
                 loader: 'frontmatter-markdown-loader',
+            });
+
+            config.module.rules.push({
+                enforce: 'pre',
+                test: /\.txt$/,
+                use: 'raw-loader',
+                include: path.resolve(__dirname, 'src/jobs'),
             });
 
             // Add eslint-loader when dev client to fix formatting issues automatically

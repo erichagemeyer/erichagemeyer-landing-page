@@ -43,3 +43,11 @@ export default {
     },
 };
 </script>
+
+<style lang="scss">
+@import '~@/assets/variables.scss';
+
+.job-summary:not(:last-of-type) {
+    margin-bottom: $spacer * 8;
+}
+</style>

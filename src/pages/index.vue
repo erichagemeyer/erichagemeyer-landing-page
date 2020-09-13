@@ -1,29 +1,25 @@
 <template>
     <v-container>
         <h1 class="text-h3 my-6">Professional Experience</h1>
-        <job-summary
-            title="Software Developer"
-            company="Cincinnati Incorporated"
-            location="Boston, MA"
-            start-date="December 2017"
-        >
-            <ul>
-                <li>
-                    As the sole software developer for the CI Boston business unit, I worked with
-                    our General Manager to plan software projects for 2018, 2019, and 2020. All
-                    major projects were executed on schedule.
-                </li>
-            </ul>
-        </job-summary>
+        <!-- eslint-disable-next-line vue/require-component-is -->
+        <component v-for="(job, i) in jobs" :key="`job-${i}`" v-bind:is="job" />
     </v-container>
 </template>
 
 <script>
-import JobSummary from '@/components/JobSummary.vue';
+import ci from '@/jobs/ci';
+import nvbots from '@/jobs/nvbots';
+
+const jobs = {
+    ci,
+    nvbots,
+};
 
 export default {
-    components: {
-        JobSummary,
+    data() {
+        return {
+            jobs,
+        };
     },
 };
 </script>
