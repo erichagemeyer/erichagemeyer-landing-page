@@ -3,7 +3,7 @@ import * as links from './build/links';
 import { saveConfigFile, patchUrlLoaderLimit } from './build/config-tools';
 
 // eslint-disable-next-line prettier/prettier
-const JOSEFIN_SANS_URL = 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap';
+const BARLOW_FONT_URL = 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap';
 const ANIMATE_CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
 
 const APPLE_TOUCH_SIZES = [57, 60, 72, 76, 114, 120, 144, 152, 180];
@@ -38,7 +38,7 @@ export default {
         ],
         link: [
             links.icon('/favicon.ico'),
-            links.stylesheet(JOSEFIN_SANS_URL),
+            links.stylesheet(BARLOW_FONT_URL),
             links.stylesheet(ANIMATE_CSS_URL),
             ...APPLE_TOUCH_SIZES.map((size) => links.appleTouchIcon(size, ICON_DIR)),
             ...PNG_ICON_SIZES.map((size) => links.pngIcon(size, ICON_DIR)),
