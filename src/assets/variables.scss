@@ -2,8 +2,16 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
-$body-font-family: 'Georgia', serif;
-$heading-font-family: 'Barlow', 'Roboto', sans-serif;
+$serif-font-family: 'Georgia', serif;
+$body-font-family: 'Barlow', 'Roboto', sans-serif;
+$font-size-root: 18px;
+
+$container-max-widths: (
+    'md': 960px,
+    'lg': 960px,
+    'xl': 960px,
+);
+
 @import '~vuetify/src/styles/settings/_colors.scss';
 
 $shades: (

@@ -1,13 +1,13 @@
 <template>
     <div class="job-summary">
-        <div class="job-summary__info d-flex justify-space-between mb-3">
+        <div class="job-summary__info d-flex justify-space-between mb-3 flex-column flex-sm-row">
             <div class="job-summary__company-info">
                 <div class="job-summary__title font-weight-bold">{{ title }}</div>
                 <div class="job-summary__company">
                     {{ company }}, <span class="font-italic">{{ location }}</span>
                 </div>
             </div>
-            <div class="job-summary__dates font-weight-bold">
+            <div class="job-summary__dates font-weight-bold font-italic">
                 {{ startDate }} &mdash; {{ endDate }}
             </div>
         </div>
@@ -45,7 +45,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@/assets/variables.scss';
+.job-summary {
+    font-family: $serif-font-family;
+}
 
 .job-summary:not(:last-of-type) {
     margin-bottom: $spacer * 8;

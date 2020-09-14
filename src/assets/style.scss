@@ -21,3 +21,13 @@
 .v-application .text-loose {
     line-height: 1.5;
 }
+
+
+.v-card__title {
+    font-family: $heading-font-family;
+}
+
+
+.v-list .v-list-item--active {
+    color: #fe6a56;
+}

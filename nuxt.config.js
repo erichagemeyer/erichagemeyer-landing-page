@@ -13,6 +13,8 @@ const ANDROID_ICON_SIZES = [192];
 
 const ICON_DIR = 'icons';
 
+const PRIMARY_COLOR = '#fe6a56';
+
 export default {
     mode: 'universal',
     srcDir: 'src',
@@ -87,9 +89,12 @@ export default {
         theme: {
             dark: false,
             themes: {
-                dark: {
-                    primary: '#fe6a56',
+                light: {
+                    primary: PRIMARY_COLOR,
                 },
+                dark: {
+                    primary: PRIMARY_COLOR,
+                }
             },
         },
     },
