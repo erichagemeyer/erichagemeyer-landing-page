@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-row class="flex-row-reverse" no-gutters>
+        <v-row class="flex-row-reverse">
             <v-col cols="12" lg="3">
                 <section-title>Technical Skills</section-title>
                 <div v-for="skill in skills" :key="skill.type" class="mb-6">
@@ -8,7 +8,7 @@
                 </div>
             </v-col>
 
-            <v-col cols="12" lg="9" class="px-lg-10 px-xl-16">
+            <v-col cols="12" lg="9" class="pr-lg-8">
                 <section-title>
                     Professional Experience
                 </section-title>

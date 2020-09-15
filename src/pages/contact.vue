@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <section-title>Contact Form</section-title>
+        <section-title class="mt-3">Contact Form</section-title>
         <v-row class="flex-row-reverse">
             <v-col cols="12" sm="5">
                 <p class="text--body-1">

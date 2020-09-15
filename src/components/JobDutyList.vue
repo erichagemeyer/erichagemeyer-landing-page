@@ -9,7 +9,7 @@ export default {};
 </script>
 
 <style lang="scss">
-@include media-breakpoint-up('md') {
+@include media-breakpoint-up('sm') {
     ul.job-duty__list {
         padding-left: $spacer * 16;
     }
