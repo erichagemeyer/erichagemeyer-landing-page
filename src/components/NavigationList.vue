@@ -9,7 +9,7 @@
 <script>
 const items = [
     {
-        title: 'Work',
+        title: 'Experience',
         to: '/',
     },
     {

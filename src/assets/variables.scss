@@ -7,18 +7,22 @@ $body-font-family: 'Barlow', 'Roboto', sans-serif;
 $font-size-root: 18px;
 
 $container-max-widths: (
-    'md': 960px,
-    'lg': 960px,
-    'xl': 960px,
+    'xl': 1420px,
 );
 
-@import '~vuetify/src/styles/settings/_colors.scss';
-
-$shades: (
-    'black': #0d0d0d,
-    'white': #ffffff,
-    'transparent': transparent,
+$headings: (
+    'subtitle-1': (
+        'line-height': 1.5,
+    )
 );
+
+// @import '~vuetify/src/styles/settings/_colors.scss';
+
+// $shades: (
+//     'black': #0d0d0d,
+//     'white': #ffffff,
+//     'transparent': transparent,
+// );
 
 $card-title-line-height: 1.35;
 $card-title-word-break: normal;

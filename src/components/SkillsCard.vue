@@ -1,14 +1,17 @@
 <template>
-    <v-card outlined>
-        <v-card-title>{{ type }}</v-card-title>
-        <v-card-text>
-            <div class="v-chip-group">
-                <v-chip v-for="skill in skills" :key="`skill-${skill}`" class="skill-chip">
-                    {{ skill }}
-                </v-chip>
-            </div>
-        </v-card-text>
-    </v-card>
+    <div>
+        <h3 class="text-subtitle-1 mb-2">{{ type }}</h3>
+        <div class="v-chip-group">
+            <v-chip
+                v-for="skill in skills"
+                :key="`skill-${skill}`"
+                :value="true"
+                class="skill-chip"
+            >
+                {{ skill }}
+            </v-chip>
+        </div>
+    </div>
 </template>
 
 <script>

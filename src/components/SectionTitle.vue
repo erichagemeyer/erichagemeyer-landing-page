@@ -12,7 +12,7 @@ export default {};
 .section-title {
     font-family: $heading-font-family;
     font-size: map-deep-get($headings, 'h6', 'size');
-    margin-bottom: $spacer * 4;
+    margin-bottom: $spacer * 2;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     color: map-deep-get($colors, 'grey', 'base');

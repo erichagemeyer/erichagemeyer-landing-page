@@ -14,6 +14,7 @@ export default {};
 }
 
 .job-duty__item {
-    line-height: 1.5;
+    font-family: $serif-font-family;
+    line-height: 1.75;
 }
 </style>

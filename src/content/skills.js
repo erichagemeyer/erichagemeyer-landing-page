@@ -44,7 +44,6 @@ export const services = [
     'Jira',
     'Hubspot',
     'Balena',
-    'Google',
-    'Analytics',
+    'Google Analytics',
     'CircleCI',
 ];
