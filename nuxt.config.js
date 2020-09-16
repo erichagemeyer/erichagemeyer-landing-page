@@ -38,8 +38,24 @@ export default {
                 name: 'description',
                 content: process.env.npm_package_description || '',
             },
+            {
+                name: 'msapplication-TileColor',
+                content: '#ffffff',
+            },
+            {
+                name: 'msapplication-TileImage',
+                content: '/icons/ms-icon-144x144.png',
+            },
+            {
+                name: 'theme-color',
+                content: '#ffffff',
+            },
         ],
         link: [
+            {
+                rel: 'manifest',
+                href: '/manifest.json',
+            },
             links.icon('/favicon.ico'),
             links.stylesheet(BARLOW_FONT_URL),
             links.stylesheet(MERRIWEATHER_FONT_URL),
@@ -96,7 +112,7 @@ export default {
                 },
                 dark: {
                     primary: PRIMARY_COLOR,
-                }
+                },
             },
         },
     },

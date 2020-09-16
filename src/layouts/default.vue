@@ -1,22 +1,20 @@
 <template>
     <v-app>
         <v-app-bar fixed class="app-navbar">
+            <img class="app-title__logo" src="/logo-primary.svg" />
+            <img class="app-title__logotype ml-4 " src="/logotype.svg" />
+
+            <v-spacer />
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <div class="app-title">
-                <img class="app-title__logo" src="/logo-primary.svg" />
-                <h1 class="app-title__text text-h6 ml-4 font-weight-bold">
-                    Eric Hagemeyer
-                </h1>
-            </div>
         </v-app-bar>
-        <v-navigation-drawer v-model="drawer" app temporary>
+        <v-navigation-drawer v-model="drawer" app temporary right>
             <navigation-list />
         </v-navigation-drawer>
         <v-main>
             <div class="app-sidebar elevation-1">
                 <img class="app-sidebar__logo" src="/logo-primary.svg" />
                 <h1 class="app-sidebar__title text-h4 mt-8 font-weight-bold">
-                    Eric Hagemeyer
+                    <img src="/logotype.svg" />
                 </h1>
                 <navigation-list class="mt-6" />
                 <v-footer absolute paddless class="white text-center">
@@ -34,7 +32,7 @@
                             </v-btn>
                         </v-card-text>
                         <v-divider />
-                        <v-card-text>&copy; 2020</v-card-text>
+                        <v-card-text class="pa-1">&copy; 2020</v-card-text>
                     </v-card>
                 </v-footer>
             </div>
@@ -78,6 +76,18 @@ $max-screensize-sidebar: (100% / $app-sidebar-width) * $max-app-sidebar-width;
     height: 36px;
 }
 
+.app-title__logotype {
+    height: 16px;
+}
+
+.app-sidebar__title {
+    width: 100%;
+    padding: 0 $spacer * 8;
+    img {
+        max-width: 100%;
+    }
+}
+
 .app-sidebar {
     display: none;
     width: $app-sidebar-width;
@@ -112,6 +122,9 @@ $max-screensize-sidebar: (100% / $app-sidebar-width) * $max-app-sidebar-width;
 }
 
 .app-sidebar__logo {
-    height: 128px;
+    height: 86px;
+    @media screen and (min-height: 700px) {
+        height: 128px;
+    }
 }
 </style>
