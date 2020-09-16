@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { languages, services, frameworks } from '@/content/skills';
+import { languages, services, frameworks } from '@/content/skills.yml';
 import SkillsCard from '@/components/SkillsCard';
 import SectionTitle from '@/components/SectionTitle';
 

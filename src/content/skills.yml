@@ -1,0 +1,43 @@
+languages:
+    - JavaScript
+    - Python
+    - HTML
+    - CSS
+    - SCSS
+    - SQL
+    - Bash
+    - Typescript
+    - SVG
+    - GCODE
+
+frameworks:
+    - Django
+    - Vue
+    - React
+    - Celery
+    - Docker
+    - ThreeJS
+    - Angular
+    - Nuxt
+    - Electron
+    - Ionic
+    - Wordpress
+    - Webpack
+    - Cordova
+    - Lodash
+    - RxJs
+
+
+services:
+    - AWS
+    - Git
+    - Slic3r
+    - Zendesk
+    - Jira
+    - Hubspot
+    - OctoPrint
+    - Balena
+    - Google Analytics
+    - Amplitude
+    - CircleCI
+    - Netlify

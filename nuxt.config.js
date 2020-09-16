@@ -12,7 +12,7 @@ const APPLE_TOUCH_SIZES = [57, 60, 72, 76, 114, 120, 144, 152, 180];
 const PNG_ICON_SIZES = [32, 96, 16];
 const ANDROID_ICON_SIZES = [192];
 
-const ICON_DIR = 'icons';
+const ICON_DIR = '/icons';
 
 const PRIMARY_COLOR = '#fe6a56';
 
