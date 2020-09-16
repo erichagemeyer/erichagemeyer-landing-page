@@ -30,17 +30,17 @@ export default {
                 {
                     url: 'https://growcleangroup.com/',
                     name: 'Grow Clean Group',
-                    image: '/portfolio/grow-clean-full.png',
+                    image: require('@/static/portfolio/grow-clean-full.png?vuetify-preload'),
                 },
                 {
                     url: 'https://industrialml.com/',
                     name: 'IndustrialML',
-                    image: '/portfolio/industrialml-home-full.png',
+                    image: require('@/static/portfolio/industrialml-home-full.png?vuetify-preload'),
                 },
                 {
                     url: 'http://monogramwindows.com/',
                     name: 'Monogram Windows & Doors',
-                    image: '/portfolio/monogram-home-full.png',
+                    image: require('@/static/portfolio/monogram-home-full.png?vuetify-preload'),
                 },
             ],
         };

@@ -102,10 +102,10 @@ export default {
         treeShake: {
             loaderOptions: {
                 progressiveImages: true,
+                registerStylesSSR: true,
             },
         },
         theme: {
-            dark: false,
             themes: {
                 light: {
                     primary: PRIMARY_COLOR,
@@ -121,6 +121,11 @@ export default {
      */
     build: {
         extractCSS: true,
+        splitChunks: {
+            layouts: false,
+            pages: false,
+            commons: false,
+        },
         /*
          ** You can extend webpack config here
          */
