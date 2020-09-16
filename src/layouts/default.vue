@@ -37,7 +37,9 @@
                 </v-footer>
             </div>
             <div class="app-content">
-                <nuxt />
+                <v-container>
+                    <nuxt />
+                </v-container>
             </div>
         </v-main>
     </v-app>

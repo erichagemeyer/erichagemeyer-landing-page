@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <div>
         <section-title class="mt-3">Websites</section-title>
         <v-row>
             <v-col v-for="site in sites" :key="site.url" cols="12" md="6">
@@ -14,7 +14,7 @@
                 </v-card>
             </v-col>
         </v-row>
-    </v-container>
+    </div>
 </template>
 
 <script>

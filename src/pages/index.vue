@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <div>
         <v-row class="flex-row-reverse">
             <v-col cols="12" lg="3">
                 <section-title>Technical Skills</section-title>
@@ -15,7 +15,7 @@
                 <job-list />
             </v-col>
         </v-row>
-    </v-container>
+    </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <div>
         <section-title class="mt-3">Contact Form</section-title>
         <v-row class="flex-row-reverse">
             <v-col cols="12" sm="5">
@@ -23,7 +23,7 @@
                 <contact-form></contact-form>
             </v-col>
         </v-row>
-    </v-container>
+    </div>
 </template>
 
 <script>
