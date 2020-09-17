@@ -1,19 +1,19 @@
 <template>
     <div>
-        <v-row class="flex-row-reverse">
-            <v-col cols="12" lg="3">
-                <section-title>Technical Skills</section-title>
-                <div v-for="skill in skills" :key="skill.type" class="mb-6">
-                    <skills-card :skills="skill.list" :type="skill.type" />
-                </div>
-            </v-col>
-
+        <v-row>
             <v-col cols="12" lg="9" class="pr-lg-8">
                 <section-title>
                     Professional Experience
                 </section-title>
                 <resume-item job="cincinnati-incorporated" />
                 <resume-item job="new-valence-robotics" />
+            </v-col>
+
+            <v-col cols="12" lg="3">
+                <section-title>Technical Skills</section-title>
+                <div v-for="skill in skills" :key="skill.type" class="mb-6">
+                    <skills-card :skills="skill.list" :type="skill.type" />
+                </div>
             </v-col>
         </v-row>
     </div>
