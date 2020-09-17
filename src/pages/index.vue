@@ -12,7 +12,8 @@
                 <section-title>
                     Professional Experience
                 </section-title>
-                <job-list />
+                <resume-item job="cincinnati-incorporated" />
+                <resume-item job="new-valence-robotics" />
             </v-col>
         </v-row>
     </div>
@@ -22,6 +23,7 @@
 import { languages, services, frameworks } from '@/content/skills.yml';
 import SkillsCard from '@/components/SkillsCard';
 import SectionTitle from '@/components/SectionTitle';
+import ResumeItem from '@/components/ResumeItem';
 
 import JobList from '@/jobs/JobList';
 
@@ -45,6 +47,7 @@ export default {
         SkillsCard,
         SectionTitle,
         JobList,
+        ResumeItem,
     },
     data() {
         return {
