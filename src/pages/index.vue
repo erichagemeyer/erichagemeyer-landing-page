@@ -7,6 +7,12 @@
                 </section-title>
                 <resume-item job="cincinnati-incorporated" />
                 <resume-item job="new-valence-robotics" />
+
+                <section-title>
+                    Personal Projects
+                </section-title>
+                <resume-item job="worldly" />
+                <resume-item job="freelance-web" />
             </v-col>
 
             <v-col cols="12" lg="3">
