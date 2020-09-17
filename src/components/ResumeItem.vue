@@ -68,25 +68,26 @@ export default {
     text-transform: uppercase;
     letter-spacing: 0.02em;
     font-size: 0.8333em;
+    line-height: 1rem;
 }
 
 .job-summary {
     margin-bottom: $spacer * 8;
 }
 .job-summary__description {
+    font-family: $serif-font-family;
+    line-height: 1.75;
+
+    a {
+        font-weight: bold;
+    }
+
     @include media-breakpoint-up('sm') {
-        ul {
-            padding-left: $spacer * 16;
-        }
+        padding-left: $spacer * 10;
     }
 
     li {
         margin-bottom: $spacer * 3;
-    }
-
-    li {
-        font-family: $serif-font-family;
-        line-height: 1.75;
     }
 }
 </style>

@@ -42,40 +42,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-// .job-summary {
-//     font-family: $serif-font-family;
-// }
-
-.job-summary__info {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-direction: column;
-    margin-bottom: $spacer * 3;
-
-    @include media-breakpoint-up('sm') {
-        flex-direction: row;
-        .job-summary__title {
-            margin-top: 0;
-        }
-    }
-}
-
-.job-summary__title {
-    margin-top: $spacer * 2;
-    @include media-breakpoint-up('sm') {
-        margin-top: 0;
-    }
-}
-
-.job-summary__dates {
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    font-size: 0.8333em;
-}
-
-.job-summary {
-    margin-bottom: $spacer * 8;
-}
-</style>
+<style lang="scss"></style>
