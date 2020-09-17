@@ -1,18 +1,19 @@
 <template>
     <div>
-        <v-row class="flex-row-reverse">
+        <v-row>
+            <v-col cols="12" lg="9" class="pr-lg-8">
+                <section-title>
+                    Professional Experience
+                </section-title>
+                <resume-item job="cincinnati-incorporated" />
+                <resume-item job="new-valence-robotics" />
+            </v-col>
+
             <v-col cols="12" lg="3">
                 <section-title>Technical Skills</section-title>
                 <div v-for="skill in skills" :key="skill.type" class="mb-6">
                     <skills-card :skills="skill.list" :type="skill.type" />
                 </div>
-            </v-col>
-
-            <v-col cols="12" lg="9" class="pr-lg-8">
-                <section-title>
-                    Professional Experience
-                </section-title>
-                <job-list />
             </v-col>
         </v-row>
     </div>
@@ -22,6 +23,7 @@
 import { languages, services, frameworks } from '@/content/skills.yml';
 import SkillsCard from '@/components/SkillsCard';
 import SectionTitle from '@/components/SectionTitle';
+import ResumeItem from '@/components/ResumeItem';
 
 import JobList from '@/jobs/JobList';
 
@@ -45,6 +47,7 @@ export default {
         SkillsCard,
         SectionTitle,
         JobList,
+        ResumeItem,
     },
     data() {
         return {

@@ -3,7 +3,6 @@
         <v-app-bar fixed class="app-navbar">
             <img class="app-title__logo" src="/logo-primary.svg" />
             <img class="app-title__logotype ml-4 " src="/logotype.svg" />
-
             <v-spacer />
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         </v-app-bar>
@@ -80,6 +79,10 @@ $max-screensize-sidebar: (100% / $app-sidebar-width) * $max-app-sidebar-width;
 
 .app-title__logotype {
     height: 16px;
+
+    @media screen and (min-width: 315px) {
+        height: 20px;
+    }
 }
 
 .app-sidebar__title {
