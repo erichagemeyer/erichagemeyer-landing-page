@@ -37,7 +37,7 @@ export default {
             {
                 hid: 'description',
                 name: 'description',
-                content: process.env.npm_package_description || '',
+                content: 'I\'m a software developer and designer based in Boston, MA.',
             },
             {
                 name: 'msapplication-TileColor',
