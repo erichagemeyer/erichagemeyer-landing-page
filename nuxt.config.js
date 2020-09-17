@@ -19,6 +19,7 @@ const PRIMARY_COLOR = '#fe6a56';
 export default {
     mode: 'universal',
     srcDir: 'src',
+    target: 'static',
     /*
      ** Headers of the page
      */
