@@ -32,7 +32,6 @@ export default {
     },
     created() {
         const markdown = require(`@/content/jobs/${this.job}.md`);
-        console.log(`Loading ${this.job}`, markdown);
         this.name = markdown.attributes.name;
         this.startDate = markdown.attributes.startDate ?? '';
         this.endDate = markdown.attributes.endDate ?? 'Present';
@@ -48,7 +47,7 @@ export default {
     justify-content: space-between;
     align-items: baseline;
     flex-direction: column;
-    margin-bottom: $spacer * 3;
+    margin-bottom: $spacer * 4;
 
     @include media-breakpoint-up('sm') {
         flex-direction: row;
@@ -81,7 +80,7 @@ export default {
         }
     }
 
-    li:not(:last-of-type) {
+    li {
         margin-bottom: $spacer * 3;
     }
 
