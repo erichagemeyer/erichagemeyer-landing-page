@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-row>
-            <v-col cols="12" lg="9" class="pr-lg-8">
+            <v-col cols="12" md="9" class="pr-lg-8">
                 <section-title>
                     Professional Experience
                 </section-title>
@@ -15,7 +15,7 @@
                 <resume-item job="freelance-web" />
             </v-col>
 
-            <v-col cols="12" lg="3">
+            <v-col cols="12" md="3">
                 <section-title>Technical Skills</section-title>
                 <div v-for="skill in skills" :key="skill.type" class="mb-6">
                     <skills-card :skills="skill.list" :type="skill.type" />
@@ -30,8 +30,6 @@ import { languages, services, frameworks } from '@/content/skills.yml';
 import SkillsCard from '@/components/SkillsCard';
 import SectionTitle from '@/components/SectionTitle';
 import ResumeItem from '@/components/ResumeItem';
-
-import JobList from '@/jobs/JobList';
 
 const skills = [
     {
@@ -52,7 +50,6 @@ export default {
     components: {
         SkillsCard,
         SectionTitle,
-        JobList,
         ResumeItem,
     },
     data() {

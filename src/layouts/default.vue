@@ -8,6 +8,7 @@
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" app temporary right>
             <navigation-list />
+            <navigation-footer />
         </v-navigation-drawer>
         <v-main>
             <div class="app-sidebar elevation-1">
@@ -16,24 +17,7 @@
                     <img src="/logotype.svg" />
                 </h1>
                 <navigation-list class="mt-6" />
-                <v-footer absolute paddless class="white text-center">
-                    <v-card flat tile width="100%" class="text-center">
-                        <v-card-text>
-                            <v-btn
-                                icon
-                                target="_blank"
-                                href="https://www.linkedin.com/in/eric-hagemeyer-1720539a/"
-                            >
-                                <v-icon>mdi-linkedin</v-icon>
-                            </v-btn>
-                            <v-btn icon target="_blank" href="https://github.com/erichagemeyer">
-                                <v-icon>mdi-github</v-icon>
-                            </v-btn>
-                        </v-card-text>
-                        <v-divider />
-                        <v-card-text class="pa-1">&copy; 2020</v-card-text>
-                    </v-card>
-                </v-footer>
+                <navigation-footer />
             </div>
             <div class="app-content">
                 <v-container>
@@ -46,10 +30,12 @@
 
 <script>
 import NavigationList from '@/components/NavigationList';
+import NavigationFooter from '@/components/NavigationFooter';
 
 export default {
     components: {
         NavigationList,
+        NavigationFooter,
     },
     data() {
         return {
