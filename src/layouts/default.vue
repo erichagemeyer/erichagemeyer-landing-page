@@ -1,8 +1,10 @@
 <template>
     <v-app>
         <v-app-bar fixed class="app-navbar">
-            <img class="app-title__logo" src="/logo-primary.svg" />
-            <img class="app-title__logotype ml-4 " src="/logotype.svg" />
+            <nuxt-link to="/" class="v-toolbar__content pa-0">
+                <img class="app-title__logo" src="/logo-primary.svg" />
+                <img class="app-title__logotype ml-4 " src="/logotype.svg" />
+            </nuxt-link>
             <v-spacer />
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         </v-app-bar>
@@ -111,7 +113,10 @@ $max-screensize-sidebar: (100% / $app-sidebar-width) * $max-app-sidebar-width;
         display: none;
     }
 }
-
+.app-mobile-sidebar__logo {
+    height: 48px;
+    opacity: 0.2;
+}
 .app-sidebar__logo {
     height: 86px;
     @media screen and (min-height: 700px) {

@@ -18,6 +18,15 @@ $headings: (
     )
 );
 
+$font-weights: (
+    'thin': 500,
+    'light': 500,
+    'regular': 500,
+    'medium': 500,
+    'bold': 600,
+    'black': 600
+);
+
 // @import '~vuetify/src/styles/settings/_colors.scss';
 
 // $shades: (
@@ -31,8 +40,12 @@ $card-title-word-break: normal;
 $card-title-adjacent-sibling-subtitle-margin-top: -14px;
 @import '~vuetify/src/components/VCard/_variables.scss';
 
+$material-light: (
+    'text': (
+        'primary': rgba(black, 0.74),
+    ),
+);
 
 @import '~vuetify/src/styles/settings/_light.scss';
-@import '~vuetify/src/styles/settings/_dark.scss';
 
 @import '~vuetify/src/styles/styles.sass';
