@@ -2,11 +2,13 @@
     <div :class="classes">
         <div class="resume-item__header">
             <div class="resume-item__company-info">
-                <div class="resume-item__company font-weight-bold text-h6">{{ name }}</div>
-                <div class="resume-item__dates">{{ startDate }} &mdash; {{ endDate }}</div>
+                <div class="resume-item__company font-weight-bold text-h6">{{ job.name }}</div>
+                <div class="resume-item__dates">
+                    {{ job.startDate | formatDate }} &mdash; {{ job.endDate | formatDate }}
+                </div>
             </div>
             <div class="resume-item__title font-weight-bold">
-                {{ title }}
+                {{ job.title }}
             </div>
         </div>
         <v-btn
@@ -20,25 +22,33 @@
             {{ isExpanded ? 'Hide' : 'Show' }} Description
             <v-icon right>{{ isExpanded ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
         </v-btn>
-        <div v-html="description" class="resume-item__description"></div>
+        <div class="resume-item__description">
+            <nuxt-content :document="job" />
+        </div>
     </div>
 </template>
 
 <script>
+import { format } from 'date-fns';
+
 export default {
+    filters: {
+        formatDate(date) {
+            if (!date) {
+                return 'Present';
+            } else {
+                return format(new Date(date.replace(/Z$/, '')), 'MMMM yyyy');
+            }
+        },
+    },
     props: {
         job: {
-            type: String,
-            default: '',
+            type: Object,
+            default: () => {},
         },
     },
     data() {
         return {
-            name: '',
-            startDate: '',
-            endDate: '',
-            title: '',
-            description: '',
             isExpanded: false,
         };
     },
@@ -49,14 +59,9 @@ export default {
                 'resume-item--expanded': this.isExpanded,
             };
         },
-    },
-    created() {
-        const markdown = require(`@/content/jobs/${this.job}.md`);
-        this.name = markdown.attributes.name;
-        this.startDate = markdown.attributes.startDate ?? '';
-        this.endDate = markdown.attributes.endDate ?? 'Present';
-        this.title = markdown.attributes.title ?? '';
-        this.description = markdown.html ?? '';
+        endDate() {
+            return this.job.endDate || 'Present';
+        },
     },
     methods: {
         toggleExpanded() {

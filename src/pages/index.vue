@@ -5,57 +5,55 @@
                 <section-title>
                     Professional Experience
                 </section-title>
-                <resume-item job="cincinnati-incorporated" />
-                <resume-item job="new-valence-robotics" />
+                <resume-item v-for="job in jobs" :key="`job-${job.path}`" :job="job" />
 
                 <section-title>
                     Personal Projects
                 </section-title>
-                <resume-item job="worldly" />
-                <resume-item job="freelance-web" />
+                <resume-item
+                    v-for="project in projects"
+                    :key="`project-${project.path}`"
+                    :job="project"
+                />
             </v-col>
 
             <v-col cols="12" md="3">
                 <section-title>Technical Skills</section-title>
-                <div v-for="skill in skills" :key="skill.type" class="mb-6">
-                    <skills-card :skills="skill.list" :type="skill.type" />
-                </div>
+                <skills-list />
             </v-col>
         </v-row>
     </div>
 </template>
 
 <script>
-import { languages, services, frameworks } from '@/content/skills.yml';
-import SkillsCard from '@/components/SkillsCard';
+import SkillsList from '@/components/SkillsList';
 import SectionTitle from '@/components/SectionTitle';
 import ResumeItem from '@/components/ResumeItem';
-
-const skills = [
-    {
-        type: 'Programming and Markup Languages',
-        list: languages,
-    },
-    {
-        type: 'Frameworks and Libraries',
-        list: frameworks,
-    },
-    {
-        type: 'Software and Services',
-        list: services,
-    },
-];
+import { orderBy } from 'lodash';
 
 export default {
     components: {
-        SkillsCard,
+        SkillsList,
         SectionTitle,
         ResumeItem,
     },
-    data() {
+    async asyncData({ $content }) {
+        const allJobs = orderBy(
+            await $content('jobs').fetch(),
+            ['endDate', 'startDate'],
+            ['desc', 'desc'],
+        );
+
+        const jobs = allJobs.filter((job) => !job.personal);
+        const projects = allJobs.filter((job) => job.personal);
+
         return {
-            skills,
+            jobs,
+            projects,
         };
+    },
+    created() {
+        console.log(this);
     },
 };
 </script>

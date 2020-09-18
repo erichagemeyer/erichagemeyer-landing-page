@@ -1,8 +1,8 @@
 ---
 name: New Valence Robotics
 title: Software Developer
-startDate: July 2014
-endDate: December 2017
+startDate: 2014-07-01
+endDate: 2017-12-01
 ---
 
 -   I worked with our software team consisting of 3 people total to establish agile development workflows and processes for issue tracking, version control, and project planning. We used JIRA and Github to maintain our projects.

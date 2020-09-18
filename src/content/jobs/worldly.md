@@ -1,8 +1,8 @@
 ---
 name: The Worldly App
 title: Founder
-startDate: June 2017
-
+startDate: 2017-06-01
+personal: true
 ---
 
 <a href="https://theworldlyapp.com/" target="_blank">The Worldly App</a> is an app to help travelers find trustworthy travel recommendations. I started the company with two other co-founders with a mission to inspire people to travel. Over 2 years later, we've launched our app in the Google Play Store and Apple Store and are continuing to grow our community and improve the experience for our users.

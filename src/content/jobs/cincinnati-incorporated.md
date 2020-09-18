@@ -1,7 +1,7 @@
 ---
 name: Cincinnati Incorporated
 title: Software Developer
-startDate: December 2017
+startDate: 2017-12-01
 ---
 
 -   As the sole software developer for the CI Boston business unit, I worked with our General Manager to plan software projects for 2018, 2019, and 2020. All major projects were executed on schedule.
