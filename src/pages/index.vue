@@ -2,19 +2,8 @@
     <div>
         <v-row>
             <v-col cols="12" md="9" class="pr-lg-8">
-                <section-title>
-                    Professional Experience
-                </section-title>
-                <resume-item v-for="job in jobs" :key="`job-${job.path}`" :job="job" />
-
-                <section-title>
-                    Personal Projects
-                </section-title>
-                <resume-item
-                    v-for="project in projects"
-                    :key="`project-${project.path}`"
-                    :job="project"
-                />
+                <resume-section :jobs="jobs" title="Professional Experience" />
+                <resume-section :jobs="projects" title="Personal Projects" />
             </v-col>
 
             <v-col cols="12" md="3">
@@ -28,21 +17,19 @@
 <script>
 import SkillsList from '@/components/SkillsList';
 import SectionTitle from '@/components/SectionTitle';
-import ResumeItem from '@/components/ResumeItem';
-import { orderBy } from 'lodash';
+import ResumeSection from '@/components/ResumeSection';
 
 export default {
     components: {
         SkillsList,
         SectionTitle,
-        ResumeItem,
+        ResumeSection,
     },
     async asyncData({ $content }) {
-        const allJobs = orderBy(
-            await $content('jobs').fetch(),
-            ['endDate', 'startDate'],
-            ['desc', 'desc'],
-        );
+        const allJobs = await $content('jobs')
+            .sortBy('startDate', 'desc')
+            .sortBy('endDate', 'desc')
+            .fetch();
 
         const jobs = allJobs.filter((job) => !job.personal);
         const projects = allJobs.filter((job) => job.personal);
@@ -51,9 +38,6 @@ export default {
             jobs,
             projects,
         };
-    },
-    created() {
-        console.log(this);
     },
 };
 </script>
