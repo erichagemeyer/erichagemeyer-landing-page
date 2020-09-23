@@ -1,9 +1,9 @@
 <template>
     <v-app>
-        <v-app-bar fixed class="app-navbar">
+        <v-app-bar fixed class="app-header">
             <nuxt-link to="/" class="v-toolbar__content pa-0">
-                <img class="app-title__logo" src="/logo-primary.svg" />
-                <img class="app-title__logotype ml-4 " src="/logotype.svg" />
+                <img class="app-header__logo" src="/logo-primary.svg" />
+                <img class="app-header__logotype ml-4 " src="/logotype.svg" />
             </nuxt-link>
             <v-spacer />
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -48,24 +48,19 @@ export default {
 </script>
 
 <style lang="scss">
-$app-sidebar-width: 320px;
-$max-app-sidebar-width: 375px;
-
-$max-screensize-sidebar: (100% / $app-sidebar-width) * $max-app-sidebar-width;
-
 .theme--light.v-application {
     background-color: #f5f5f5;
 }
-.app-title {
+.app-header {
     display: flex;
     align-items: center;
 }
 
-.app-title__logo {
+.app-header__logo {
     height: 36px;
 }
 
-.app-title__logotype {
+.app-header__logotype {
     height: 16px;
 
     @media screen and (min-width: 315px) {
@@ -96,26 +91,26 @@ $max-screensize-sidebar: (100% / $app-sidebar-width) * $max-app-sidebar-width;
 }
 
 .app-content {
-    margin-top: 56px;
+    margin-top: $app-header-small-height;
 
     @include media-breakpoint-up('md') {
-        margin-top: 64px;
+        margin-top: $app-header-height;
     }
 
     @include media-breakpoint-up('lg') {
         margin-top: 0px;
         margin-left: $app-sidebar-width;
     }
+
+    & > .v-container {
+        min-height: 100%;
+    }
 }
 
-.app-navbar {
+.app-header {
     @include media-breakpoint-up('lg') {
         display: none;
     }
-}
-.app-mobile-sidebar__logo {
-    height: 48px;
-    opacity: 0.2;
 }
 .app-sidebar__logo {
     height: 86px;

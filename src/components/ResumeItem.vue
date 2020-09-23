@@ -13,18 +13,17 @@
         </div>
         <v-btn
             @click="toggleExpanded()"
-            class="resume-item__expand-button d-md-none"
+            class="resume-item__expand-button d-md-none px-0"
             color="primary"
             text
-            rounded
-            block
         >
+            <v-icon left>{{ isExpanded ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
             {{ isExpanded ? 'Hide' : 'Show' }} Description
-            <v-icon right>{{ isExpanded ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
         </v-btn>
         <div class="resume-item__description">
             <nuxt-content :document="job" />
         </div>
+        <v-divider class="d-md-none mt-4" />
     </div>
 </template>
 
