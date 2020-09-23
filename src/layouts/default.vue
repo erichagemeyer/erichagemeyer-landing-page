@@ -18,9 +18,9 @@
         <v-main>
             <div class="app-sidebar elevation-1">
                 <img class="app-sidebar__logo" src="/logo-primary.svg" />
-                <h1 class="app-sidebar__title text-h4 mt-8 font-weight-bold">
+                <div class="app-sidebar__title text-h4 mt-8 font-weight-bold">
                     <img src="/logotype.svg" />
-                </h1>
+                </div>
                 <navigation-list class="mt-6" />
                 <navigation-footer />
             </div>

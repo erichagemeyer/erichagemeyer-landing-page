@@ -13,6 +13,7 @@ const ANDROID_ICON_SIZES = [192];
 const ICON_DIR = '/icons';
 
 const PRIMARY_COLOR = '#fe6a56';
+const DESCRIPTION = `I'm a software developer and designer based in Boston, MA.`;
 
 export default {
     mode: 'universal',
@@ -35,7 +36,7 @@ export default {
             {
                 hid: 'description',
                 name: 'description',
-                content: `I'm a software developer and designer based in Boston, MA.`,
+                content: DESCRIPTION,
             },
             {
                 name: 'msapplication-TileColor',
