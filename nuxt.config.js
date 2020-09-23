@@ -13,6 +13,7 @@ const ANDROID_ICON_SIZES = [192];
 const ICON_DIR = '/icons';
 
 const PRIMARY_COLOR = '#fe6a56';
+const DESCRIPTION = `I'm a software developer and designer based in Boston, MA.`;
 
 export default {
     mode: 'universal',
@@ -35,7 +36,7 @@ export default {
             {
                 hid: 'description',
                 name: 'description',
-                content: `I'm a software developer and designer based in Boston, MA.`,
+                content: DESCRIPTION,
             },
             {
                 name: 'msapplication-TileColor',
@@ -93,7 +94,7 @@ export default {
     /*
      ** Nuxt.js modules
      */
-    modules: ['@nuxt/content'],
+    modules: ['@nuxt/content', '@nuxtjs/sitemap'],
     /*
      ** vuetify module configuration
      ** https://github.com/nuxt-community/vuetify-module
@@ -168,5 +169,9 @@ export default {
             // save config to file for debugging
             saveConfigFile(process.env.SAVE_WEBPACK_CONFIG, config);
         },
+    },
+    sitemap: {
+        hostname: 'https://erichagemeyer.com',
+        gzip: true,
     },
 };

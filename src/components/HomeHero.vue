@@ -1,6 +1,6 @@
 <template>
     <div class="home-hero">
-        <img class="home-hero__avatar" src="images/erichagemeyer-profile.png" />
+        <img class="home-hero__avatar" src="images/erichagemeyer-profile@0.25x.jpg" />
         <h1 class="home-hero__headline mt-4 mt-sm-8">
             <slot />
         </h1>

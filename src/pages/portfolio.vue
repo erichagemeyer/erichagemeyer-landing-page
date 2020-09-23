@@ -24,23 +24,26 @@ export default {
     components: {
         SectionTitle,
     },
+    head: {
+        title: 'Portfolio',
+    },
     data() {
         return {
             sites: [
                 {
                     url: 'https://growcleangroup.com/',
                     name: 'Grow Clean Group',
-                    image: require('@/static/portfolio/grow-clean-full.png?vuetify-preload'),
+                    image: require('@/static/portfolio/grow-clean-cropped@0.5x.jpg?vuetify-preload'),
                 },
                 {
                     url: 'https://industrialml.com/',
                     name: 'IndustrialML',
-                    image: require('@/static/portfolio/industrialml-home-full.png?vuetify-preload'),
+                    image: require('@/static/portfolio/industrialml-home-cropped@0.5x.jpg?vuetify-preload'),
                 },
                 {
                     url: 'http://monogramwindows.com/',
                     name: 'Monogram Windows & Doors',
-                    image: require('@/static/portfolio/monogram-home-full.png?vuetify-preload'),
+                    image: require('@/static/portfolio/monogram-home-cropped@0.5x.jpg?vuetify-preload'),
                 },
             ],
         };
