@@ -6,7 +6,10 @@
                 <img class="app-header__logotype ml-4 " src="/logotype.svg" />
             </nuxt-link>
             <v-spacer />
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon
+                @click.stop="drawer = !drawer"
+                class="d-print-none"
+            ></v-app-bar-nav-icon>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" app temporary right>
             <navigation-list />
@@ -102,6 +105,10 @@ export default {
         margin-left: $app-sidebar-width;
     }
 
+    @media print {
+        margin-top: $app-header-small-height / 2;
+    }
+
     & > .v-container {
         min-height: 100%;
     }
@@ -116,6 +123,18 @@ export default {
     height: 86px;
     @media screen and (min-height: 700px) {
         height: 128px;
+    }
+}
+
+@media print {
+    .v-app-bar.v-app-bar--fixed {
+        position: absolute;
+    }
+    .v-sheet.v-app-bar.v-toolbar:not(.v-sheet--outlined) {
+        box-shadow: none;
+    }
+    html {
+        font-size: 12px;
     }
 }
 </style>

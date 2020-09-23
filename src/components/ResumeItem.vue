@@ -13,17 +13,17 @@
         </div>
         <v-btn
             @click="toggleExpanded()"
-            class="resume-item__expand-button d-md-none px-0"
+            class="resume-item__expand-button d-md-none px-0 d-print-none"
             color="primary"
             text
         >
             <v-icon left>{{ isExpanded ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
             {{ isExpanded ? 'Hide' : 'Show' }} Description
         </v-btn>
-        <div class="resume-item__description">
+        <div class="resume-item__description d-print-block">
             <nuxt-content :document="job" />
         </div>
-        <v-divider class="d-md-none mt-4" />
+        <v-divider class="d-md-none mt-4 d-print-none" />
     </div>
 </template>
 
@@ -75,8 +75,10 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    flex-direction: column;
     margin-bottom: $spacer * 2;
+    @media screen {
+        flex-direction: column;
+    }
 
     @include media-breakpoint-up('sm') {
         flex-direction: row;
@@ -106,6 +108,9 @@ export default {
 
 .resume-item {
     margin-bottom: $spacer * 8;
+    @media print {
+        margin-bottom: $spacer * 2;
+    }
 }
 .resume-item__description {
     font-family: $serif-font-family;
@@ -115,6 +120,10 @@ export default {
 
     .resume-item--expanded & {
         display: block;
+    }
+
+    @media print {
+        margin-top: $spacer;
     }
 
     a {
@@ -131,6 +140,10 @@ export default {
 
     li {
         margin-bottom: $spacer * 3;
+
+        @media print {
+            margin-bottom: $spacer;
+        }
     }
 }
 </style>

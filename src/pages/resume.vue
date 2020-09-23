@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="resume-page">
         <v-row>
             <v-col cols="12" md="9" class="pr-lg-8">
                 <resume-section :jobs="jobs" title="Professional Experience" />
@@ -42,4 +42,22 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@media print {
+    .resume-page {
+        .col-md-9 {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+
+        .col-md-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        & > .row {
+            flex-direction: row-reverse;
+        }
+    }
+}
+</style>
