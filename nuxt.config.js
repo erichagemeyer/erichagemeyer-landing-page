@@ -93,7 +93,7 @@ export default {
     /*
      ** Nuxt.js modules
      */
-    modules: [],
+    modules: ['@nuxt/content'],
     /*
      ** vuetify module configuration
      ** https://github.com/nuxt-community/vuetify-module

@@ -2,43 +2,52 @@
     <div :class="classes">
         <div class="resume-item__header">
             <div class="resume-item__company-info">
-                <div class="resume-item__company font-weight-bold text-h6">{{ name }}</div>
-                <div class="resume-item__dates">{{ startDate }} &mdash; {{ endDate }}</div>
+                <div class="resume-item__company font-weight-bold text-h6">{{ job.name }}</div>
+                <div class="resume-item__dates">
+                    {{ job.startDate | formatDate }} &mdash; {{ job.endDate | formatDate }}
+                </div>
             </div>
             <div class="resume-item__title font-weight-bold">
-                {{ title }}
+                {{ job.title }}
             </div>
         </div>
         <v-btn
             @click="toggleExpanded()"
-            class="resume-item__expand-button d-md-none"
+            class="resume-item__expand-button d-md-none px-0 d-print-none"
             color="primary"
             text
-            rounded
-            block
         >
+            <v-icon left>{{ isExpanded ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
             {{ isExpanded ? 'Hide' : 'Show' }} Description
-            <v-icon right>{{ isExpanded ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
         </v-btn>
-        <div v-html="description" class="resume-item__description"></div>
+        <div class="resume-item__description d-print-block">
+            <nuxt-content :document="job" />
+        </div>
+        <v-divider class="d-md-none mt-4 d-print-none" />
     </div>
 </template>
 
 <script>
+import { format } from 'date-fns';
+
 export default {
+    filters: {
+        formatDate(date) {
+            if (!date) {
+                return 'Present';
+            } else {
+                return format(new Date(date.replace(/Z$/, '')), 'MMMM yyyy');
+            }
+        },
+    },
     props: {
         job: {
-            type: String,
-            default: '',
+            type: Object,
+            default: () => {},
         },
     },
     data() {
         return {
-            name: '',
-            startDate: '',
-            endDate: '',
-            title: '',
-            description: '',
             isExpanded: false,
         };
     },
@@ -49,14 +58,9 @@ export default {
                 'resume-item--expanded': this.isExpanded,
             };
         },
-    },
-    created() {
-        const markdown = require(`@/content/jobs/${this.job}.md`);
-        this.name = markdown.attributes.name;
-        this.startDate = markdown.attributes.startDate ?? '';
-        this.endDate = markdown.attributes.endDate ?? 'Present';
-        this.title = markdown.attributes.title ?? '';
-        this.description = markdown.html ?? '';
+        endDate() {
+            return this.job.endDate || 'Present';
+        },
     },
     methods: {
         toggleExpanded() {
@@ -71,8 +75,10 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    flex-direction: column;
     margin-bottom: $spacer * 2;
+    @media screen {
+        flex-direction: column;
+    }
 
     @include media-breakpoint-up('sm') {
         flex-direction: row;
@@ -102,6 +108,9 @@ export default {
 
 .resume-item {
     margin-bottom: $spacer * 8;
+    @media print {
+        margin-bottom: $spacer * 2;
+    }
 }
 .resume-item__description {
     font-family: $serif-font-family;
@@ -111,6 +120,10 @@ export default {
 
     .resume-item--expanded & {
         display: block;
+    }
+
+    @media print {
+        margin-top: $spacer;
     }
 
     a {
@@ -127,6 +140,10 @@ export default {
 
     li {
         margin-bottom: $spacer * 3;
+
+        @media print {
+            margin-bottom: $spacer;
+        }
     }
 }
 </style>

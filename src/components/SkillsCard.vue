@@ -36,5 +36,14 @@ $skill-chip-margin: $skill-chip-gap / 2;
 .skill-chip {
     margin: $skill-chip-margin $skill-chip-gap $skill-chip-margin 0;
     font-family: $heading-font-family;
+
+    &.v-chip.v-size--default {
+        @media print {
+            font-size: 10px;
+            height: auto;
+            margin: 0;
+            background: gray;
+        }
+    }
 }
 </style>

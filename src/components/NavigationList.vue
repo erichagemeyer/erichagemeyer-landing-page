@@ -9,8 +9,12 @@
 <script>
 const items = [
     {
-        title: 'Experience',
+        title: 'Home',
         to: '/',
+    },
+    {
+        title: 'Resume',
+        to: '/resume',
     },
     {
         title: 'Portfolio',
