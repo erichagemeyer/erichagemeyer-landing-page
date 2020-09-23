@@ -93,7 +93,7 @@ export default {
     /*
      ** Nuxt.js modules
      */
-    modules: ['@nuxt/content'],
+    modules: ['@nuxt/content', '@nuxtjs/sitemap'],
     /*
      ** vuetify module configuration
      ** https://github.com/nuxt-community/vuetify-module
@@ -168,5 +168,9 @@ export default {
             // save config to file for debugging
             saveConfigFile(process.env.SAVE_WEBPACK_CONFIG, config);
         },
+    },
+    sitemap: {
+        hostname: 'https://erichagemeyer.com',
+        gzip: true,
     },
 };

@@ -25,6 +25,9 @@ export default {
         SectionTitle,
         ResumeSection,
     },
+    head: {
+        title: 'Resume',
+    },
     async asyncData({ $content }) {
         const allJobs = await $content('jobs')
             .sortBy('startDate', 'desc')

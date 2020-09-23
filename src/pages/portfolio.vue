@@ -24,6 +24,9 @@ export default {
     components: {
         SectionTitle,
     },
+    head: {
+        title: 'Portfolio',
+    },
     data() {
         return {
             sites: [

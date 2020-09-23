@@ -35,6 +35,9 @@ export default {
         SectionTitle,
         ContactForm,
     },
+    head: {
+        title: 'Contact',
+    },
     data() {
         return {
             email: 'erichagemeyer@gmail.com',
