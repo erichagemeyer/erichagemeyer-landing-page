@@ -4,8 +4,8 @@ title: Software Developer
 startDate: 2017-12-01
 ---
 
--   As the sole software developer for the CI Boston business unit, I worked with our General Manager to plan software projects for 2018, 2019, and 2020. All major projects were executed on schedule.
--   Maintained and managed 75+ cloud-connected 3D printers in the field. Worked with customer support to remotely diagnose network configuration problems, detect hardware malfunctions, and debug software issues.
+-   As the lead software developer for the CI Boston business unit, I worked with our General Manager to plan software projects for 2018, 2019, and 2020. All major projects were executed on schedule.
+-   Maintained and managed 100+ cloud-connected 3D printers in the field. Worked with customer support to remotely diagnose network configuration problems, detect hardware malfunctions, and debug software issues.
 -   Maintained and managed our cloud software stack which includes 10 Linux servers and 4 MySQL databases. I was responsible for updating the cloud software running on the servers and performing data and schema migrations on the database.
 -   Designed, developed, tested, and implemented a battery backup circuit and a python service to gracefully shutdown the printer after abrupt power loss to prevent SD card corruption.
 -   Researched, designed, and implemented the electronics and wiring for a built-in touchscreen control panel.
