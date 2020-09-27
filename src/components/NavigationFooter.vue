@@ -2,11 +2,7 @@
     <v-footer absolute paddless class="white text-center">
         <v-card flat tile width="100%" class="text-center">
             <v-card-text>
-                <v-btn
-                    icon
-                    target="_blank"
-                    href="https://www.linkedin.com/in/eric-hagemeyer-1720539a/"
-                >
+                <v-btn icon target="_blank" href="https://www.linkedin.com/in/eric-hagemeyer/">
                     <v-icon>mdi-linkedin</v-icon>
                 </v-btn>
                 <v-btn icon target="_blank" href="https://github.com/erichagemeyer">
