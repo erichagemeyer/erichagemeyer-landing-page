@@ -3,7 +3,7 @@ name: Cincinnati Incorporated
 title: Software Developer
 startDate: 2017-12-01
 ---
-
+I joined Cincinnati Incorporated (CI) after they acquired my previous company NVBOTS and created the CI Boston business unit where we continued to design and manufacture 3D Printers and software. After the acquisition, I led the process of converting our software projects to the new branding and product requirements for CI. Once the migration to CI was complete, my responsibilities returned to maintaining our products in the field and designing new features to grow our user base.
 -   As the lead software developer for the CI Boston business unit, I worked with our General Manager to plan software projects for 2018, 2019, and 2020. All major projects were executed on schedule.
 -   Maintained and managed 100+ cloud-connected 3D printers in the field. Worked with customer support to remotely diagnose network configuration problems, detect hardware malfunctions, and debug software issues.
 -   Maintained and managed our cloud software stack which includes 10 Linux servers and 4 MySQL databases. I was responsible for updating the cloud software running on the servers and performing data and schema migrations on the database.
